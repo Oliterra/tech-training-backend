@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5437/java-training
+    userName: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  flyway:
+    enabled: true
+    clean-disabled: false
+    baselineOnMigrate: true
+    validateOnMigrate: true
+    locations: classpath:edu/nadia/tech/training/migration
+
+migrations:
+  insert-fake-data: true

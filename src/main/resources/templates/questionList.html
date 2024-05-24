@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all questions</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        .questions {
+            border: 1px solid firebrick;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .questions tr td, th {
+            padding: 5px;
+            border: 1px solid firebrick;
+        }
+
+        .id {
+            width: 170px;
+        }
+
+        .title {
+            width: 50px;
+        }
+
+        .description {
+            width: 220px;
+        }
+
+        .difficulty {
+            width: 5px;
+        }
+
+        .category {
+            width: 10px;
+        }
+
+        .author {
+            width: 10px;
+        }
+
+        .tags {
+            width: 50px;
+        }
+
+        .comments {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h3>
+    Длительность загрузки данных: <span th:text="${duration}">1000</span> сек
+</h3>
+
+<h3>questions:</h3>
+<table class="questions">
+    <thead>
+    <tr>
+        <th class="id">ID</th>
+        <th class="title">Title</th>
+        <th class="description">Description</th>
+        <th class="difficulty">Difficulty</th>
+        <th class="category">Category</th>
+        <th class="author">Author</th>
+        <th class="tags">Tags</th>
+        <th class="comments">Comments</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="question : ${questions}" th:object="${question}">
+        <td th:text="*{id}">0</td>
+        <td th:text="*{title}">NoValue</td>
+        <td th:text="*{description}">NoValue</td>
+        <td th:text="*{difficulty}">NoValue</td>
+        <td th:text="*{category}">NoValue</td>
+        <td th:text="*{author}">NoValue</td>
+        <td th:text="*{tags}">NoValue</td>
+        <td th:text="*{comments}">NoValue</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

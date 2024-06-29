@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5437/java-training
+    url: jdbc:postgresql://localhost:5440/java-training
     userName: admin
     password: admin
     driver-class-name: org.postgresql.Driver
@@ -16,7 +16,7 @@ spring:
     clean-disabled: false
     baselineOnMigrate: true
     validateOnMigrate: true
-    locations: classpath:edu/nadia/tech/training/migration
+    locations: classpath:db/migration
 
-migrations:
-  insert-fake-data: true
+server:
+  port: 8080

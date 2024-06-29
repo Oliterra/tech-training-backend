@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuestionDTO {
+public class QuestionInfoForTemplateDTO {
 
     private UUID id;
     private String title;
@@ -24,8 +24,8 @@ public class QuestionDTO {
     private String tags;
     private String comments;
 
-    public static QuestionDTO fromDomainObject(QuestionEntity questionEntity) {
-        return new QuestionDTO(
+    public static QuestionInfoForTemplateDTO fromEntity(QuestionEntity questionEntity) {
+        return new QuestionInfoForTemplateDTO(
                 questionEntity.getId(),
                 questionEntity.getTitle(),
                 questionEntity.getDescription(),

@@ -1,4 +1,4 @@
-package edu.oliterra.tech.training.migration;
+package db.migration;
 
 import jakarta.annotation.Nullable;
 import org.flywaydb.core.api.migration.BaseJavaMigration;

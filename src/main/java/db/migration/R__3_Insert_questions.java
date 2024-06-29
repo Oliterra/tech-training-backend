@@ -1,4 +1,4 @@
-package edu.oliterra.tech.training.migration;
+package db.migration;
 
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
@@ -44,6 +44,6 @@ public class R__3_Insert_questions extends BaseJavaMigration {
     }
 
     private int getRandomDifficulty() {
-        return MigrationUtils.random.nextInt(InsertConstants.MAX_QUESTION_DIFFICULTY) + 1;
+        return MigrationUtils.random.nextInt(InsertConstants.MAX_QUESTION_DIFFICULTY) + InsertConstants.MIN_QUESTION_DIFFICULTY;
     }
 }

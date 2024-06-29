@@ -1,4 +1,4 @@
-package edu.oliterra.tech.training.migration;
+package db.migration;
 
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @RequiredArgsConstructor
-public class QuestionController {
+public class TemplatesController {
 
     private final QuestionService questionService;
 

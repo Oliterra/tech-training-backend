@@ -7,3 +7,6 @@ delete from questions;
 delete from tags;
 delete from questions_tags;
 delete from comments;
+delete from answers;
+delete from journals;
+delete from journal_chapters;

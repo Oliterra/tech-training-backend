@@ -1,4 +1,4 @@
-package edu.oliterra.tech.training.models;
+package edu.oliterra.tech.training.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,17 +13,20 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "categories")
-public class CategoryEntity {
+@Table(name = "journals")
+public class JournalEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-
+    @OneToOne
+    @JoinColumn(name = "question_id")
+    private QuestionEntity question;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private AuthorEntity author;
     @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
-    private String description;
 }

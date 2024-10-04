@@ -1,4 +1,4 @@
-package edu.oliterra.tech.training.models;
+package edu.oliterra.tech.training.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,15 +20,13 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
-
     @Column(name = "text")
     private String text;
-
     @ManyToOne
     @JoinColumn(name = "question_id")
     private QuestionEntity question;
-
     @ManyToOne
     @JoinColumn(name = "author_id")
     private AuthorEntity author;
+
 }

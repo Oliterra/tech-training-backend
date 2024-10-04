@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @RequiredArgsConstructor
-public class TemplatesController {
+public class TemplateController {
 
     private final QuestionService questionService;
 
     @GetMapping("/")
     public String questionsListPage(Model model) {
         long before = System.currentTimeMillis();
-        var questions = questionService.findAll();
+        var questions = questionService.getAllForTemplate();
         long after = System.currentTimeMillis();
 
         model.addAttribute("duration", (after - before) / 1000);

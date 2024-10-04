@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 import java.util.Map;
 import java.util.stream.IntStream;
 
-public class R__2_Insert_tags extends BaseJavaMigration {
+public class R__3_Insert_tags extends BaseJavaMigration {
 
     @Override
     public void migrate(Context context) {

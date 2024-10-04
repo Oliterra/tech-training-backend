@@ -29,12 +29,10 @@ create table questions
     id          uuid      default uuid_generate_v4() primary key,
     title       varchar(255) not null unique,
     description text,
-    category_id uuid,
-    author_id   uuid,
+    category_id uuid references categories (id),
+    author_id   uuid references authors (id),
     difficulty  varchar(20),
-    created_at  timestamp default current_timestamp,
-    foreign key (category_id) references categories (id),
-    foreign key (author_id) references authors (id)
+    created_at  timestamp default current_timestamp
 );
 
 create table tags

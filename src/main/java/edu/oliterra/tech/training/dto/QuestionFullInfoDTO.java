@@ -1,23 +1,20 @@
 package edu.oliterra.tech.training.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class QuestionInfoForTemplateDTO {
+public class QuestionFullInfoDTO {
 
     private UUID id;
     private String title;
     private String description;
     private Integer difficulty;
     private String category;
-    private String author;
-    private String tags;
-    private String comments;
+    private String journalName;
+    private AuthorDTO author;
+    private Set<AnswerDTO> answers;
 
 }

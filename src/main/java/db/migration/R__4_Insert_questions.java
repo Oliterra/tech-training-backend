@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class R__3_Insert_questions extends BaseJavaMigration {
+public class R__4_Insert_questions extends BaseJavaMigration {
 
     @Override
     public void migrate(Context context) {
@@ -34,8 +34,8 @@ public class R__3_Insert_questions extends BaseJavaMigration {
 
     private Map<String, Object> getQuestionParams(int questionIndex, List<UUID> categoryIds, List<UUID> authorIds) {
         String title = String.format("Вопрос #%d", questionIndex);
-        return new MapSqlParameterSource("title", title)
-                .addValue("description", title.repeat(5))
+        return new MapSqlParameterSource("title", title.repeat(15))
+                .addValue("description", title.repeat(20))
                 .addValue("categoryId", MigrationUtils.getRandomIdFromList(categoryIds))
                 .addValue("authorId", MigrationUtils.getRandomIdFromList(authorIds))
                 .addValue("difficulty", getRandomDifficulty())
